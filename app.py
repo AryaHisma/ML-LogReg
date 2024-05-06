@@ -1,3 +1,5 @@
+pip install -r req.txt
+
 # Core Package
 import streamlit as st 
 import streamlit.components.v1 as stc 
