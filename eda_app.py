@@ -5,10 +5,9 @@ import streamlit as st
 import pandas as pd 
 
 # Load Data Visualization Package
-!pip install seaborn
-#import matplotlib.pyplot as plt
-#import matplotlib
-#matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 import seaborn as sns 
 import plotly.express as px 
 
@@ -71,9 +70,9 @@ def run_eda_app():
             # Gender Distribution
             with st.expander("Dist Plot of Gender"):
                 # Using Seaborn
-                #fig = plt.figure()
-                #sns.countplot(df['Gender'])
-                #st.pyplot(fig)
+                fig = plt.figure()
+                sns.countplot(df['Gender'])
+                st.pyplot(fig)
                 
                 gen_df = df['Gender'].value_counts().to_frame()
                 gen_df = gen_df.reset_index()
@@ -86,9 +85,9 @@ def run_eda_app():
                 
         # For Class Distribution
             with st.expander("Dist Plot of Class"):
-                #fig = plt.figure()
-                #sns.countplot(df['class'])
-                #st.pyplot(fig, use_container_width=True)
+                fig = plt.figure()
+                sns.countplot(df['class'])
+                st.pyplot(fig, use_container_width=True)
                 
                 p2 = px.box(df, x='class')
                 st.plotly_chart(p2, use_container_width=True)
@@ -111,9 +110,9 @@ def run_eda_app():
 
         # Outlier Detection
         with st.expander("Outlier Detection Plot"):
-            #fig = plt.figure()
-            #sns.boxplot(df['Age'])
-            #st.pyplot(fig, use_container_width=True)
+            fig = plt.figure()
+            sns.boxplot(df['Age'])
+            st.pyplot(fig, use_container_width=True)
             
             p4 = px.box(df, x='Age', color='Gender')
             st.plotly_chart(p4, use_container_width=True)
@@ -122,9 +121,9 @@ def run_eda_app():
         # Correlation
         with st.expander("Correlation Plot"):
             corr_matrix = df_encode.corr()
-            #fig = plt.figure(figsize=(20, 10))
-            #sns.heatmap(corr_matrix, annot=True)
-            #st.pyplot(fig, use_container_width=True)
+            fig = plt.figure(figsize=(20, 10))
+            sns.heatmap(corr_matrix, annot=True)
+            st.pyplot(fig, use_container_width=True)
             
             p5 = px.imshow(corr_matrix)
             st.plotly_chart(p5, use_container_width=True)
