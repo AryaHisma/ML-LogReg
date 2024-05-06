@@ -5,6 +5,7 @@ import streamlit as st
 import pandas as pd 
 
 # Load Data Visualization Package
+!pip install seaborn
 #import matplotlib.pyplot as plt
 #import matplotlib
 #matplotlib.use('Agg')
