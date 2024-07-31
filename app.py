@@ -1,4 +1,4 @@
-pip install -r req.txt
+pip install -r requirements.txt
 
 # Core Package
 import streamlit as st 
